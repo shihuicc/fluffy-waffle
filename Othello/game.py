@@ -36,14 +36,12 @@ class game:
         self._rows = self.get_rows()
             
     def get_cols(self) -> int:
-        ''' Gets and returns the number of columns in the current game
-         state.'''
+        ''' Gets and returns the number of columns in the current game state.'''
         self._num_of_cols = len(self._board[0])
         return self._num_of_cols
 
     def get_rows(self) -> int:
-        ''' Gets and returns the number of rows in the current game
-         state.'''
+        ''' Gets and returns the number of rows in the current game state.'''
         self._num_of_rows = len(self._board)
         return self._num_of_rows
 
@@ -101,8 +99,7 @@ class game:
         return new_board
 
     def _more_discs(self):
-        ''' Determines which player has more discs on the board and returns
-        that player. If there's a tie, return tie.'''
+        ''' Determines which player has more discs on the board and returns that player. If there's a tie, return tie.'''
         w = count_discs(self._board)[0]
         b = count_discs(self._board)[-1]
 
@@ -128,8 +125,7 @@ class CheckMove:
     def check_a_move(self):
         ''' Checks if an attempted move is valid(on the board, the cell
         was not filled already, there are discs to flip). If valid,
-        returns a list of discs that need to be flipped, otherwise,
-        return False.'''
+        returns a list of discs that need to be flipped, otherwise, return False.'''
         discs_to_flip_lst = []
         
         self._cell_not_empty()
@@ -157,8 +153,7 @@ class CheckMove:
 
 
 def on_board(x, y, board) -> bool:
-    ''' Checks to see if an attempted cell is on the board, if not,
-    return False.'''
+    ''' Checks to see if an attempted cell is on the board, if not, return False.'''
     cols = len(board[0])-1
     rows = len(board)-1
     
